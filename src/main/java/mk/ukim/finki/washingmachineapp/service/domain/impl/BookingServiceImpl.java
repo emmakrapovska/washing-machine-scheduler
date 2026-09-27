@@ -6,6 +6,10 @@ import mk.ukim.finki.washingmachineapp.models.domain.Machine;
 import mk.ukim.finki.washingmachineapp.models.domain.Student;
 import mk.ukim.finki.washingmachineapp.models.enums.BookingStatus;
 import mk.ukim.finki.washingmachineapp.models.enums.MachineStatus;
+import mk.ukim.finki.washingmachineapp.models.exception.BookingOverlapException;
+import mk.ukim.finki.washingmachineapp.models.exception.ConfirmationDeadlinePassedException;
+import mk.ukim.finki.washingmachineapp.models.exception.MachineNotOperationalException;
+import mk.ukim.finki.washingmachineapp.models.exception.WeeklyBookingLimitExceededException;
 import mk.ukim.finki.washingmachineapp.repository.BookingRepository;
 import mk.ukim.finki.washingmachineapp.service.domain.BookingService;
 import org.springframework.stereotype.Service;
@@ -43,7 +47,7 @@ public class BookingServiceImpl implements BookingService {
     @Transactional
     public Booking create(Machine machine, Student student, LocalDateTime startTime) {
         if (machine.getStatus() == MachineStatus.NEISPRAVNA) {
-            throw new RuntimeException("Mashinata e vo defekt i ne mozhe da se rezervira");
+            throw new MachineNotOperationalException(machine.getId());
         }
 
         LocalDateTime endTime = startTime.plusHours(SLOT_DURATION_HOURS);
@@ -57,14 +61,13 @@ public class BookingServiceImpl implements BookingService {
         long activeBookingsThisWeek = bookingRepository.countActiveBookingsInWeek(
                 student.getId(), weekStart, weekEnd, ACTIVE_STATUSES);
         if (activeBookingsThisWeek >= MAX_BOOKINGS_PER_WEEK) {
-            throw new RuntimeException(
-                    "Go dostignavte nedelniot limit od " + MAX_BOOKINGS_PER_WEEK + " rezervacii");
+            throw new WeeklyBookingLimitExceededException(student.getId(), MAX_BOOKINGS_PER_WEEK);
         }
 
         boolean overlaps = bookingRepository.existsOverlappingBooking(
                 machine.getId(), startTime, endTime, ACTIVE_STATUSES);
         if (overlaps) {
-            throw new RuntimeException("Terminot e veke zafaten za ovaa mashina");
+            throw new BookingOverlapException(machine.getId());
         }
 
         Booking booking = new Booking();
@@ -89,7 +92,7 @@ public class BookingServiceImpl implements BookingService {
         if (newStatus == BookingStatus.APPROVED) {
             LocalDateTime confirmDeadline = booking.getStartTime().plusMinutes(MINUTES_TO_CONFIRM);
             if (LocalDateTime.now().isAfter(confirmDeadline)) {
-                throw new RuntimeException("Pominato e vremeto za potvrda na prisustvo");
+                throw new ConfirmationDeadlinePassedException(booking.getId());
             }
         }
         booking.setStatus(newStatus);
