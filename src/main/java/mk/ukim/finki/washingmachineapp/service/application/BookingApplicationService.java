@@ -2,7 +2,7 @@ package mk.ukim.finki.washingmachineapp.service.application;
 
 import mk.ukim.finki.washingmachineapp.models.dto.BookingResponse;
 import mk.ukim.finki.washingmachineapp.models.dto.CreateBookingRequest;
-import mk.ukim.finki.washingmachineapp.models.enums.BookingStatus;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -14,7 +14,9 @@ public interface BookingApplicationService {
 
     BookingResponse create(CreateBookingRequest request);
 
-    Optional<BookingResponse> updateStatus(Long id, BookingStatus newStatus);
+    BookingResponse confirmAttendance(Long id);
+
+    BookingResponse cancel(Long id);
 
     Optional<BookingResponse> deleteById(Long id);
 }

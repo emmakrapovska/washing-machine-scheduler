@@ -3,7 +3,6 @@ package mk.ukim.finki.washingmachineapp.service.domain;
 import mk.ukim.finki.washingmachineapp.models.domain.Booking;
 import mk.ukim.finki.washingmachineapp.models.domain.Machine;
 import mk.ukim.finki.washingmachineapp.models.domain.Student;
-import mk.ukim.finki.washingmachineapp.models.enums.BookingStatus;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,7 +16,9 @@ public interface BookingService {
 
     Booking create(Machine machine, Student student, LocalDateTime startTime);
 
-    Optional<Booking> updateStatus(Long id, BookingStatus newStatus);
+    Booking confirmAttendance(Long id);
+
+    Booking cancel(Long id);
 
     Optional<Booking> deleteById(Long id);
 }

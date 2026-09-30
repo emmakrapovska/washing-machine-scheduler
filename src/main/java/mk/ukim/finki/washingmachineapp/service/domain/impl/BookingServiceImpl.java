@@ -6,10 +6,7 @@ import mk.ukim.finki.washingmachineapp.models.domain.Machine;
 import mk.ukim.finki.washingmachineapp.models.domain.Student;
 import mk.ukim.finki.washingmachineapp.models.enums.BookingStatus;
 import mk.ukim.finki.washingmachineapp.models.enums.MachineStatus;
-import mk.ukim.finki.washingmachineapp.models.exception.BookingOverlapException;
-import mk.ukim.finki.washingmachineapp.models.exception.ConfirmationDeadlinePassedException;
-import mk.ukim.finki.washingmachineapp.models.exception.MachineNotOperationalException;
-import mk.ukim.finki.washingmachineapp.models.exception.WeeklyBookingLimitExceededException;
+import mk.ukim.finki.washingmachineapp.models.exception.*;
 import mk.ukim.finki.washingmachineapp.repository.BookingRepository;
 import mk.ukim.finki.washingmachineapp.service.domain.BookingService;
 import org.springframework.stereotype.Service;
@@ -81,22 +78,27 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     @Transactional
-    public Optional<Booking> updateStatus(Long id, BookingStatus newStatus) {
-        Optional<Booking> optionalBooking = bookingRepository.findById(id);
+    public Booking confirmAttendance(Long id) {
+        Booking booking = bookingRepository.findById(id)
+                .orElseThrow(() -> new BookingNotFoundException(id));
 
-        if (optionalBooking.isEmpty()) {
-            return Optional.empty();
+        LocalDateTime confirmDeadline = booking.getStartTime().plusMinutes(MINUTES_TO_CONFIRM);
+        if (LocalDateTime.now().isAfter(confirmDeadline)) {
+            throw new ConfirmationDeadlinePassedException(booking.getId());
         }
-        Booking booking = optionalBooking.get();
 
-        if (newStatus == BookingStatus.APPROVED) {
-            LocalDateTime confirmDeadline = booking.getStartTime().plusMinutes(MINUTES_TO_CONFIRM);
-            if (LocalDateTime.now().isAfter(confirmDeadline)) {
-                throw new ConfirmationDeadlinePassedException(booking.getId());
-            }
-        }
-        booking.setStatus(newStatus);
-        return Optional.of(bookingRepository.save(booking));
+        booking.setStatus(BookingStatus.APPROVED);
+        return bookingRepository.save(booking);
+    }
+
+    @Override
+    @Transactional
+    public Booking cancel(Long id) {
+        Booking booking = bookingRepository.findById(id)
+                .orElseThrow(() -> new BookingNotFoundException(id));
+
+        booking.setStatus(BookingStatus.CANCELED);
+        return bookingRepository.save(booking);
     }
 
     @Override

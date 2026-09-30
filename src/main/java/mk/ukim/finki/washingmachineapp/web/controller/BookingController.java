@@ -4,7 +4,6 @@ package mk.ukim.finki.washingmachineapp.web.controller;
 import jakarta.validation.Valid;
 import mk.ukim.finki.washingmachineapp.models.dto.BookingResponse;
 import mk.ukim.finki.washingmachineapp.models.dto.CreateBookingRequest;
-import mk.ukim.finki.washingmachineapp.models.enums.BookingStatus;
 import mk.ukim.finki.washingmachineapp.models.exception.BookingNotFoundException;
 import mk.ukim.finki.washingmachineapp.service.application.BookingApplicationService;
 import org.springframework.http.HttpStatus;
@@ -41,12 +40,14 @@ public class BookingController {
         return bookingApplicationService.create(request);
     }
 
-    @PatchMapping("/{id}/status")
-    public ResponseEntity<BookingResponse> updateStatus(@PathVariable Long id,
-                                                        @RequestParam BookingStatus newStatus) {
-        return bookingApplicationService.updateStatus(id, newStatus)
-                .map(ResponseEntity::ok)
-                .orElseThrow(() -> new BookingNotFoundException(id));
+    @PostMapping("/{id}/confirm")
+    public ResponseEntity<BookingResponse> confirmAttendance(@PathVariable Long id) {
+        return ResponseEntity.ok(bookingApplicationService.confirmAttendance(id));
+    }
+
+    @PostMapping("/{id}/cancel")
+    public ResponseEntity<BookingResponse> cancel(@PathVariable Long id) {
+        return ResponseEntity.ok(bookingApplicationService.cancel(id));
     }
 
     @DeleteMapping("/{id}")

@@ -5,7 +5,6 @@ import mk.ukim.finki.washingmachineapp.models.dto.CreateBookingRequest;
 import mk.ukim.finki.washingmachineapp.models.domain.Booking;
 import mk.ukim.finki.washingmachineapp.models.domain.Machine;
 import mk.ukim.finki.washingmachineapp.models.domain.Student;
-import mk.ukim.finki.washingmachineapp.models.enums.BookingStatus;
 import mk.ukim.finki.washingmachineapp.models.exception.MachineNotFoundException;
 import mk.ukim.finki.washingmachineapp.models.exception.StudentNotFoundException;
 import mk.ukim.finki.washingmachineapp.repository.MachineRepository;
@@ -57,9 +56,15 @@ public class BookingApplicationServiceImpl implements BookingApplicationService 
     }
 
     @Override
-    public Optional<BookingResponse> updateStatus(Long id, BookingStatus newStatus) {
-        return bookingService.updateStatus(id, newStatus)
-                .map(BookingResponse::from);
+    public BookingResponse confirmAttendance(Long id) {
+        Booking booking = bookingService.confirmAttendance(id);
+        return BookingResponse.from(booking);
+    }
+
+    @Override
+    public BookingResponse cancel(Long id) {
+        Booking booking = bookingService.cancel(id);
+        return BookingResponse.from(booking);
     }
 
     @Override
