@@ -4,6 +4,7 @@ import mk.ukim.finki.washingmachineapp.models.domain.Booking;
 import mk.ukim.finki.washingmachineapp.models.enums.BookingStatus;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public record BookingResponse(
         Long id,

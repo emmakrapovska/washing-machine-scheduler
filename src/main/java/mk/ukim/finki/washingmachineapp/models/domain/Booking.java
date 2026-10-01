@@ -32,4 +32,12 @@ public class Booking extends BaseAuditableEntity {
     @Column(nullable = false)
     private LocalDateTime endTime;
 
+    public Booking(Machine machine, Student student,BookingStatus status,LocalDateTime startTime,LocalDateTime endTime) {
+        this.machine = machine;
+        this.student = student;
+        this.status = status;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+
 }

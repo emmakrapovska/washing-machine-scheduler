@@ -38,8 +38,7 @@ public class BookingApplicationServiceImpl implements BookingApplicationService 
     @Override
     public List<BookingResponse> findAll() {
         return bookingService.findAll().stream()
-                .map(BookingResponse::from)
-                .toList();
+                .map(BookingResponse::from).toList();
     }
 
     @Override

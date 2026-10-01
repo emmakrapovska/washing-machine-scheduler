@@ -2,6 +2,8 @@ package mk.ukim.finki.washingmachineapp.models.dto;
 
 import mk.ukim.finki.washingmachineapp.models.domain.Student;
 
+import java.util.List;
+
 public record StudentResponse(
         Long id,
         String name,
@@ -15,5 +17,10 @@ public record StudentResponse(
                 student.getRoomNumber(),
                 student.getEmail()
         );
+    }
+
+    public static List<StudentResponse> from(List<Student> students) {
+        return students.stream()
+                .map(StudentResponse::from).toList();
     }
 }

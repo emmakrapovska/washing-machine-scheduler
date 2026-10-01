@@ -21,4 +21,10 @@ public class Machine extends BaseAuditableEntity {
     @Enumerated(EnumType.STRING)
     private MachineStatus status;
 
+    public Machine(MachineType machineType, String location, MachineStatus status){
+        this.machineType=machineType;
+        this.location=location;
+        this.status=status;
+    }
+
 }

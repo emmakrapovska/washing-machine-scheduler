@@ -19,4 +19,10 @@ public class Student extends BaseAuditableEntity {
     @Column(unique = true, nullable = false)
     private String email;
 
+
+    public Student(String name, String roomNumber,String email){
+        this.name=name;
+        this.roomNumber=roomNumber;
+        this.email=email;
+    }
 }
