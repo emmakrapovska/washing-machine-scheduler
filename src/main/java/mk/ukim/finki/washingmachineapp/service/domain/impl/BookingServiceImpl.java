@@ -107,4 +107,15 @@ public class BookingServiceImpl implements BookingService {
         booking.ifPresent(bookingRepository::delete);
         return booking;
     }
+
+    @Override
+    @Transactional
+    public List<Booking> cancelNoShowBookings() {
+        LocalDateTime threshold = LocalDateTime.now().minusMinutes(MINUTES_TO_CONFIRM);
+
+        List<Booking> noShowBookings = bookingRepository.findByStatusAndStartTimeBefore(BookingStatus.CREATED, threshold);
+
+        noShowBookings.forEach(booking -> booking.setStatus(BookingStatus.FAILED));
+        return bookingRepository.saveAll(noShowBookings);
+    }
 }

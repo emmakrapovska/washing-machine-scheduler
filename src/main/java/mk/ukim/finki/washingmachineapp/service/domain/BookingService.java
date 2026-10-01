@@ -21,4 +21,6 @@ public interface BookingService {
     Booking cancel(Long id);
 
     Optional<Booking> deleteById(Long id);
+
+    List<Booking> cancelNoShowBookings();
 }
