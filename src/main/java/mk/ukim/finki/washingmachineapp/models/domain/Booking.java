@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "bookings")
 public class Booking extends BaseAuditableEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)

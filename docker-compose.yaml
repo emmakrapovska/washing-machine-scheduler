@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:17.4
+    restart: always
+    environment:
+      POSTGRES_USER: wmuser
+      POSTGRES_PASSWORD: wmpass
+      POSTGRES_DB: washingmachinedb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+volumes:
+  pgdata:
