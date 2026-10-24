@@ -395,3 +395,369 @@ Caused by: java.net.ConnectException: Connection refused: getsockopt
 2026-10-24T18:41:00.570+02:00 TRACE 3776 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2026-10-24T18:26:00.255967400]
 2026-10-24T18:41:12.109+02:00  INFO 3776 --- [washing-machine-scheduler-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-10-24T18:41:12.142+02:00  INFO 3776 --- [washing-machine-scheduler-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-10-24T19:00:44.103+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] m.u.f.w.WashingMachineAppApplication     : Starting WashingMachineAppApplication using Java 21.0.8 with PID 1728 (C:\Users\temp\IdeaProjects\washing-machine-app\target\classes started by temp in C:\Users\temp\IdeaProjects\washing-machine-app)
+2026-10-24T19:00:44.129+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] m.u.f.w.WashingMachineAppApplication     : The following 1 profile is active: "dev"
+2026-10-24T19:00:51.004+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-24T19:00:51.004+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-24T19:00:52.202+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-24T19:00:52.837+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@204b0f07
+2026-10-24T19:00:52.837+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-24T19:00:52.939+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5433/washingmachinedb (PostgreSQL 17.4)
+2026-10-24T19:00:53.324+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.162s)
+2026-10-24T19:00:53.382+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 3
+2026-10-24T19:00:53.398+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-24T19:00:53.791+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-24T19:00:54.060+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-24T19:00:56.250+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/washingmachinedb]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.4
+	Default catalog/schema: washingmachinedb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-24T19:01:00.605+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-24T19:01:02.114+02:00  WARN 1728 --- [washing-machine-scheduler-backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-24T19:01:08.461+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [main] m.u.f.w.WashingMachineAppApplication     : Started WashingMachineAppApplication in 26.769 seconds (process running for 31.529)
+2026-10-24T19:01:08.949+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.SQL                        : select b1_0.id,b1_0.created_at,b1_0.end_time,b1_0.machine_id,b1_0.start_time,b1_0.status,b1_0.student_id,b1_0.updated_at from bookings b1_0 where b1_0.status=? and b1_0.start_time<?
+2026-10-24T19:01:08.953+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [CREATED]
+2026-10-24T19:01:08.954+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2026-10-24T18:46:08.516869]
+2026-10-24T19:01:09.045+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-24T19:01:12.812+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1921 ms
+2026-10-24T19:01:52.057+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : insert into students (created_at,email,name,room_number,updated_at) values (?,?,?,?,?)
+2026-10-24T19:01:52.072+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [2026-10-24T19:01:51.973673200]
+2026-10-24T19:01:52.073+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [ana@example.com]
+2026-10-24T19:01:52.073+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [Ana Petrovska]
+2026-10-24T19:01:52.073+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [204]
+2026-10-24T19:01:52.073+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (5:TIMESTAMP) <- [2026-10-24T19:01:51.973673200]
+2026-10-24T19:01:52.139+02:00  WARN 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 23505
+2026-10-24T19:01:52.140+02:00  WARN 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.error             : ERROR: duplicate key value violates unique constraint "students_email_key"
+  Detail: Key (email)=(ana@example.com) already exists.
+2026-10-24T19:01:52.174+02:00 ERROR 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "students_email_key"
+  Detail: Key (email)=(ana@example.com) already exists.] [insert into students (created_at,email,name,room_number,updated_at) values (?,?,?,?,?)]; SQL [insert into students (created_at,email,name,room_number,updated_at) values (?,?,?,?,?)]; constraint [students_email_key]] with root cause
+
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "students_email_key"
+  Detail: Key (email)=(ana@example.com) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194) ~[postgresql-42.7.3.jar:42.7.3]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155) ~[postgresql-42.7.3.jar:42.7.3]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-7.0.2.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:185) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:96) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:45) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:65) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:54) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:183) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:123) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:87) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:87) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:667) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:270) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:384) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:298) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:228) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:144) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:144) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:91) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:75) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:51) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:709) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:692) ~[hibernate-core-7.4.5.Final.jar:7.4.5.Final]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:360) ~[spring-orm-7.0.9.jar:7.0.9]
+	at jdk.proxy2/jdk.proxy2.$Proxy156.persist(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityHandlerInvocationHandler.invokeMethod(SharedEntityManagerCreator.java:239) ~[spring-orm-7.0.9.jar:7.0.9]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:392) ~[spring-orm-7.0.9.jar:7.0.9]
+	at jdk.proxy2/jdk.proxy2.$Proxy156.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:664) ~[spring-data-jpa-4.1.1.jar:4.1.1]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:278) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:169) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:545) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:290) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:690) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:171) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:146) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69) ~[spring-data-commons-4.1.1.jar:4.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:166) ~[spring-data-jpa-4.1.1.jar:4.1.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222) ~[spring-aop-7.0.9.jar:7.0.9]
+	at jdk.proxy2/jdk.proxy2.$Proxy176.save(Unknown Source) ~[na:na]
+	at mk.ukim.finki.washingmachineapp.service.domain.impl.StudentServiceImpl.create(StudentServiceImpl.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:715) ~[spring-aop-7.0.9.jar:7.0.9]
+	at mk.ukim.finki.washingmachineapp.service.domain.impl.StudentServiceImpl$$SpringCGLIB$$0.create(<generated>) ~[classes/:na]
+	at mk.ukim.finki.washingmachineapp.service.application.impl.UserApplicationServiceImpl.register(UserApplicationServiceImpl.java:37) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130) ~[spring-tx-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.9.jar:7.0.9]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719) ~[spring-aop-7.0.9.jar:7.0.9]
+	at mk.ukim.finki.washingmachineapp.service.application.impl.UserApplicationServiceImpl$$SpringCGLIB$$0.register(<generated>) ~[classes/:na]
+	at mk.ukim.finki.washingmachineapp.web.controller.UserController.register(UserController.java:25) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649) ~[tomcat-embed-core-11.0.24.jar:6.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.9.jar:7.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.24.jar:6.1]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:132) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:59) ~[tomcat-embed-websocket-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$2(FilterChainProxy.java:235) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:376) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:132) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:86) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at mk.ukim.finki.washingmachineapp.web.filter.JwtFilter.doFilterInternal(JwtFilter.java:45) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:385) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195) ~[spring-security-web-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317) ~[spring-security-config-7.1.1.jar:7.1.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.9.jar:7.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:111) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:535) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:86) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:71) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:347) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:406) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1307) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:2036) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:74) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:949) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:483) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:74) ~[tomcat-embed-core-11.0.24.jar:11.0.24]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-10-24T19:03:04.193+02:00  WARN 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public mk.ukim.finki.washingmachineapp.models.dto.RegisterResponse mk.ukim.finki.washingmachineapp.web.controller.UserController.register(mk.ukim.finki.washingmachineapp.models.dto.RegisterRequest): [Field error in object 'registerRequest' on field 'password': rejected value [ema123]; codes [Size.registerRequest.password,Size.password,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerRequest.password,password]; arguments []; default message [password],2147483647,8]; default message [Lozinkata mora da ima najmalku 8 karakteri]] ]
+2026-10-24T19:06:08.468+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.SQL                        : select b1_0.id,b1_0.created_at,b1_0.end_time,b1_0.machine_id,b1_0.start_time,b1_0.status,b1_0.student_id,b1_0.updated_at from bookings b1_0 where b1_0.status=? and b1_0.start_time<?
+2026-10-24T19:06:08.468+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [CREATED]
+2026-10-24T19:06:08.468+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2026-10-24T18:51:08.468574600]
+2026-10-24T19:07:43.766+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : insert into students (created_at,email,name,room_number,updated_at) values (?,?,?,?,?)
+2026-10-24T19:07:43.772+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [2026-10-24T19:07:43.766606500]
+2026-10-24T19:07:43.772+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [marko-nov@example.com]
+2026-10-24T19:07:43.772+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [Marko Ivanov]
+2026-10-24T19:07:43.775+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [115]
+2026-10-24T19:07:43.775+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (5:TIMESTAMP) <- [2026-10-24T19:07:43.766606500]
+2026-10-24T19:07:43.851+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : select u1_0.id from users u1_0 where u1_0.username=? fetch first ? rows only
+2026-10-24T19:07:43.851+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [marko123]
+2026-10-24T19:07:43.851+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (2:INTEGER) <- [1]
+2026-10-24T19:07:44.275+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.SQL                        : insert into users (created_at,email,password,role,student_id,updated_at,username) values (?,?,?,?,?,?,?)
+2026-10-24T19:07:44.281+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [2026-10-24T19:07:44.262963600]
+2026-10-24T19:07:44.283+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [marko-nov@example.com]
+2026-10-24T19:07:44.286+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [$2a$10$Uc8JkphiqLwAMigSci8oueRz.dxfAXPGkwGHAONhDeryRANqsVDSu]
+2026-10-24T19:07:44.287+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [STUDENT]
+2026-10-24T19:07:44.287+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (5:BIGINT) <- [4]
+2026-10-24T19:07:44.287+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (6:TIMESTAMP) <- [2026-10-24T19:07:44.262963600]
+2026-10-24T19:07:44.287+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-7] org.hibernate.orm.jdbc.bind              : binding parameter (7:VARCHAR) <- [marko123]
+2026-10-24T19:08:23.566+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-9] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.password,u1_0.role,u1_0.student_id,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-10-24T19:08:23.568+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-9] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [marko123]
+2026-10-24T19:09:17.717+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.password,u1_0.role,u1_0.student_id,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-10-24T19:09:17.717+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [marko123]
+2026-10-24T19:09:17.800+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : select s1_0.id,s1_0.created_at,s1_0.email,s1_0.name,s1_0.room_number,s1_0.updated_at from students s1_0
+2026-10-24T19:10:17.814+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.password,u1_0.role,u1_0.student_id,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-10-24T19:10:17.814+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [marko123]
+2026-10-24T19:10:17.854+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : select m1_0.id,m1_0.created_at,m1_0.location,m1_0.machine_type,m1_0.status,m1_0.updated_at from machines m1_0
+2026-10-24T19:10:40.523+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.password,u1_0.role,u1_0.student_id,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-10-24T19:10:40.524+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [marko123]
+2026-10-24T19:10:40.549+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-2] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.password,u1_0.role,u1_0.student_id,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-10-24T19:10:40.549+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-2] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [marko123]
+2026-10-24T19:11:08.466+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.SQL                        : select b1_0.id,b1_0.created_at,b1_0.end_time,b1_0.machine_id,b1_0.start_time,b1_0.status,b1_0.student_id,b1_0.updated_at from bookings b1_0 where b1_0.status=? and b1_0.start_time<?
+2026-10-24T19:11:08.466+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [CREATED]
+2026-10-24T19:11:08.466+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2026-10-24T18:56:08.466095100]
+2026-10-24T19:16:08.456+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.SQL                        : select b1_0.id,b1_0.created_at,b1_0.end_time,b1_0.machine_id,b1_0.start_time,b1_0.status,b1_0.student_id,b1_0.updated_at from bookings b1_0 where b1_0.status=? and b1_0.start_time<?
+2026-10-24T19:16:08.456+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [CREATED]
+2026-10-24T19:16:08.456+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2026-10-24T19:01:08.456234400]
+2026-10-24T19:21:08.460+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.SQL                        : select b1_0.id,b1_0.created_at,b1_0.end_time,b1_0.machine_id,b1_0.start_time,b1_0.status,b1_0.student_id,b1_0.updated_at from bookings b1_0 where b1_0.status=? and b1_0.start_time<?
+2026-10-24T19:21:08.461+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [CREATED]
+2026-10-24T19:21:08.462+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2026-10-24T19:06:08.457236900]
+2026-10-24T19:26:08.455+02:00 DEBUG 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.SQL                        : select b1_0.id,b1_0.created_at,b1_0.end_time,b1_0.machine_id,b1_0.start_time,b1_0.status,b1_0.student_id,b1_0.updated_at from bookings b1_0 where b1_0.status=? and b1_0.start_time<?
+2026-10-24T19:26:08.455+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [CREATED]
+2026-10-24T19:26:08.455+02:00 TRACE 1728 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2026-10-24T19:11:08.455486]
+2026-10-24T19:29:17.168+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-24T19:29:17.192+02:00  INFO 1728 --- [washing-machine-scheduler-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-10-24T19:29:36.118+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] m.u.f.w.WashingMachineAppApplication     : Starting WashingMachineAppApplication using Java 21.0.8 with PID 18508 (C:\Users\temp\IdeaProjects\washing-machine-app\target\classes started by temp in C:\Users\temp\IdeaProjects\washing-machine-app)
+2026-10-24T19:29:36.129+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] m.u.f.w.WashingMachineAppApplication     : The following 1 profile is active: "dev"
+2026-10-24T19:29:42.250+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-24T19:29:42.253+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-24T19:29:43.368+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-24T19:29:43.866+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@a120b9
+2026-10-24T19:29:43.867+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-24T19:29:43.947+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5433/washingmachinedb (PostgreSQL 17.4)
+2026-10-24T19:29:44.268+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.114s)
+2026-10-24T19:29:44.318+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 3
+2026-10-24T19:29:44.337+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-24T19:29:44.738+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-24T19:29:44.998+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-24T19:29:47.088+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/washingmachinedb]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.4
+	Default catalog/schema: washingmachinedb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-24T19:29:50.929+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-24T19:29:52.552+02:00  WARN 18508 --- [washing-machine-scheduler-backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-24T19:29:57.503+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [main] m.u.f.w.WashingMachineAppApplication     : Started WashingMachineAppApplication in 23.322 seconds (process running for 27.358)
+2026-10-24T19:29:57.856+02:00 DEBUG 18508 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.SQL                        : select b1_0.id,b1_0.created_at,b1_0.end_time,b1_0.machine_id,b1_0.start_time,b1_0.status,b1_0.student_id,b1_0.updated_at from bookings b1_0 where b1_0.status=? and b1_0.start_time<?
+2026-10-24T19:29:57.856+02:00 TRACE 18508 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [CREATED]
+2026-10-24T19:29:57.856+02:00 TRACE 18508 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2026-10-24T19:14:57.556099900]
+2026-10-24T19:30:39.914+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-24T19:30:43.454+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2106 ms
+2026-10-24T19:31:35.082+02:00 DEBUG 18508 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-3] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.password,u1_0.role,u1_0.student_id,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-10-24T19:31:35.082+02:00 TRACE 18508 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-3] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [marko123]
+2026-10-24T19:32:35.046+02:00 DEBUG 18508 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-8] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.password,u1_0.role,u1_0.student_id,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-10-24T19:32:35.046+02:00 TRACE 18508 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-8] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [marko123]
+2026-10-24T19:34:57.517+02:00 DEBUG 18508 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.SQL                        : select b1_0.id,b1_0.created_at,b1_0.end_time,b1_0.machine_id,b1_0.start_time,b1_0.status,b1_0.student_id,b1_0.updated_at from bookings b1_0 where b1_0.status=? and b1_0.start_time<?
+2026-10-24T19:34:57.519+02:00 TRACE 18508 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [CREATED]
+2026-10-24T19:34:57.519+02:00 TRACE 18508 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2026-10-24T19:19:57.513334]
+2026-10-24T19:38:55.668+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-24T19:38:55.690+02:00  INFO 18508 --- [washing-machine-scheduler-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-10-24T19:39:06.083+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] m.u.f.w.WashingMachineAppApplication     : Starting WashingMachineAppApplication using Java 21.0.8 with PID 17648 (C:\Users\temp\IdeaProjects\washing-machine-app\target\classes started by temp in C:\Users\temp\IdeaProjects\washing-machine-app)
+2026-10-24T19:39:06.094+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] m.u.f.w.WashingMachineAppApplication     : The following 1 profile is active: "dev"
+2026-10-24T19:39:11.895+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-24T19:39:11.897+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-24T19:39:13.035+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-24T19:39:13.495+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f9addd4
+2026-10-24T19:39:13.501+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-24T19:39:13.592+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5433/washingmachinedb (PostgreSQL 17.4)
+2026-10-24T19:39:13.897+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.112s)
+2026-10-24T19:39:13.956+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 3
+2026-10-24T19:39:13.968+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-24T19:39:14.360+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-24T19:39:14.567+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-24T19:39:16.485+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5433/washingmachinedb]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.4
+	Default catalog/schema: washingmachinedb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-24T19:39:19.927+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-24T19:39:21.614+02:00  WARN 17648 --- [washing-machine-scheduler-backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-24T19:39:26.717+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [main] m.u.f.w.WashingMachineAppApplication     : Started WashingMachineAppApplication in 22.748 seconds (process running for 26.357)
+2026-10-24T19:39:27.074+02:00 DEBUG 17648 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.SQL                        : select b1_0.id,b1_0.created_at,b1_0.end_time,b1_0.machine_id,b1_0.start_time,b1_0.status,b1_0.student_id,b1_0.updated_at from bookings b1_0 where b1_0.status=? and b1_0.start_time<?
+2026-10-24T19:39:27.077+02:00 TRACE 17648 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [CREATED]
+2026-10-24T19:39:27.078+02:00 TRACE 17648 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2026-10-24T19:24:26.783666100]
+2026-10-24T19:39:30.791+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-24T19:39:34.661+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2059 ms
+2026-10-24T19:39:55.971+02:00 DEBUG 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.password,u1_0.role,u1_0.student_id,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-10-24T19:39:55.971+02:00 TRACE 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-10] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [marko123]
+2026-10-24T19:40:50.445+02:00 DEBUG 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : select u1_0.id,u1_0.created_at,u1_0.email,u1_0.password,u1_0.role,u1_0.student_id,u1_0.updated_at,u1_0.username from users u1_0 where u1_0.username=?
+2026-10-24T19:40:50.447+02:00 TRACE 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [marko123]
+2026-10-24T19:40:50.615+02:00 DEBUG 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-4] org.hibernate.SQL                        : insert into machines (created_at,location,machine_type,status,updated_at) values (?,?,?,?,?)
+2026-10-24T19:40:50.629+02:00 TRACE 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (1:TIMESTAMP) <- [2026-10-24T19:40:50.549636]
+2026-10-24T19:40:50.629+02:00 TRACE 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (2:VARCHAR) <- [Kat2]
+2026-10-24T19:40:50.629+02:00 TRACE 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (3:VARCHAR) <- [PERENJE]
+2026-10-24T19:40:50.629+02:00 TRACE 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (4:VARCHAR) <- [NEISPRAVNA]
+2026-10-24T19:40:50.629+02:00 TRACE 17648 --- [washing-machine-scheduler-backend] [http-nio-8080-exec-4] org.hibernate.orm.jdbc.bind              : binding parameter (5:TIMESTAMP) <- [2026-10-24T19:40:50.549636]
+2026-10-24T19:44:26.720+02:00 DEBUG 17648 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.SQL                        : select b1_0.id,b1_0.created_at,b1_0.end_time,b1_0.machine_id,b1_0.start_time,b1_0.status,b1_0.student_id,b1_0.updated_at from bookings b1_0 where b1_0.status=? and b1_0.start_time<?
+2026-10-24T19:44:26.720+02:00 TRACE 17648 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (1:VARCHAR) <- [CREATED]
+2026-10-24T19:44:26.720+02:00 TRACE 17648 --- [washing-machine-scheduler-backend] [scheduling-1] org.hibernate.orm.jdbc.bind              : binding parameter (2:TIMESTAMP) <- [2026-10-24T19:29:26.720668300]
+2026-10-24T19:44:49.430+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-24T19:44:49.447+02:00  INFO 17648 --- [washing-machine-scheduler-backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

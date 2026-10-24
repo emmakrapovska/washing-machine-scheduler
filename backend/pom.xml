@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>mk.ukim.finki</groupId>
-    <artifactId>washing-machine-scheduler-backend</artifactId>
+    <artifactId>washing-machine-scheduler</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>washing-machine-app</name>
     <description>washing-machine-app</description>
